@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'painscore/index'
+
   get 'foodlog/index'
 
   get 'welcome/index'
