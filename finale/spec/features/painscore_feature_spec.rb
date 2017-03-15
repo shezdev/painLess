@@ -8,4 +8,15 @@ feature 'Painscore' do
       expect(page).to have_button 'Add Pain Score'
     end
   end
+
+  context "Recording pain score" do
+    scenario 'prompts user to fill out a form, then displays the pain scores' do
+      visit '/'
+      click_link_or_button 'Log Pain'
+      fill_in 'Score', with: 5
+      click_link_or_button 'Add Pain Score'
+      expect(current_path).to eq painscores_path
+      expect(page).to have_content 5
+    end
+  end
 end
