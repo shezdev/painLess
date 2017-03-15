@@ -1,0 +1,2 @@
+module PainscoresHelper
+end

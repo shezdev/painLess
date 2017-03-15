@@ -1,0 +1,2 @@
+class Painscore < ApplicationRecord
+end
