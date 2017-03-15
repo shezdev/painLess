@@ -1,0 +1,6 @@
+%h1 Pain Log
+- if @painscores.any?
+  - @painscores.each do |p|
+    %h2= p.score
+- else
+  %h1 No Pain Score
