@@ -1,0 +1,6 @@
+%h1 Food Log
+- if @foodlogs.any?
+  - @foodlogs.each do |f|
+    %h2= f.food
+- else
+  %h1 No Food Logged Yet

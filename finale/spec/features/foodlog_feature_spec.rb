@@ -10,4 +10,15 @@ feature 'FoodLog' do
       expect(page).to have_button 'Add Food'
     end
   end
+
+  context "Creating foodlogs" do
+    scenario 'prompts user to fill out a form, then displays the new food log' do
+      visit '/'
+      click_link_or_button 'Log Food'
+      fill_in 'Food', with: 'Cucumber'
+      click_link_or_button 'Add Food'
+      expect(current_path).to eq foodlogs_path
+      expect(page).to have_content('Cucumber')
+    end
+  end
 end
