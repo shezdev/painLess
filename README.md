@@ -18,7 +18,7 @@ I want to be able to see yesterday’s input
 
 ```
 As a user
-So that I can see the patterns in my behaviour
+So that I can see the patterns in my pain
 I want to see what I ate the previous day, for the highest pain score.
 
 As a user
@@ -26,10 +26,16 @@ So that I can input more information / see more patterns / more environmental fa
 I want to input my activity/exertion (low/med/high)
 
 As a user
-So that I can see clearer patterns in my behaviour
+So that I can see clearer patterns in my pain
 I want to return group of foods causing high pain scores.
 ```
 
+### V3 Functionality
+- Update food and painscores to show on same page as form
+- Functionality for multiple users
+
+### V4 Functionality
+- TBC... Weather API?
 
 ## Getting started
 
@@ -53,3 +59,26 @@ https://github.com/matiassingers/awesome-readme
 
 ![Image Title](image.png)
 >>>>>>> 114a823f8e025fbbafbd80ee9995abe83759940a
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
