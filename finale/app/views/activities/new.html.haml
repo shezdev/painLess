@@ -1,0 +1,7 @@
+%h1 No Activity Logged Yet
+= form_for Activity.new do |a|
+  = a.label :name
+  = a.text_field :name
+  = a.label :exertion
+  = a.text_field :exertion
+  = a.submit :'Add Activity'
