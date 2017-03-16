@@ -1,5 +1,6 @@
 %h1 Results
-- if @foodlogs
-  = @foodlogs.food
+- if !@foodlogs.empty?
+  - @foodlogs.each do |f|
+    = f.food
 - else
   %h1 No Results Yet
