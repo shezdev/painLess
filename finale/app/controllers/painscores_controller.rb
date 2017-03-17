@@ -9,7 +9,7 @@ class PainscoresController < ApplicationController
   end
 
   def painscore_params
-    params.require(:painscore).permit(:score)
+    params.require(:painscore).permit(:score, :customdate)
   end
 
   def index

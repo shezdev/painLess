@@ -1,5 +1,7 @@
 %h1 No Pain Score
 = form_for Painscore.new do |p|
   %h3 Please enter your pain level on a scale from 1 - 10 here:
+  = p.label :date
+  = p.date_field :customdate
   = p.text_field :score, :id => "Score"
   = p.submit :'Add Pain Score'
