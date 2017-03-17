@@ -9,7 +9,7 @@ class FoodlogsController < ApplicationController
   end
 
   def foodlog_params
-    params.require(:foodlog).permit(:food)
+    params.require(:foodlog).permit(:food, :customdate)
   end
 
   def index
