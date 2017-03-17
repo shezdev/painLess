@@ -32,10 +32,14 @@ I want to return group of foods causing high pain scores.
 
 ### V3 Functionality
 - Update food and painscores to show on same page as form
-- Functionality for multiple users
+- Today's food and painscores are only displayed
+- Functionality for multiple users (login etc)
+- Update and delete functionality
 
 ### V4 Functionality
-- TBC... Weather API?
+- Data Visualisation of all Data
+- Stats for GP/Dietician
+- AJAX to recall previous entries
 
 ## Getting started
 
