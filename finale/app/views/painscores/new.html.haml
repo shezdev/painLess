@@ -1,5 +1,7 @@
 %h1 No Pain Score
 = form_for Painscore.new do |p|
+  = p.label :date
+  = p.date_field :customdate
   = p.label :score
   = p.text_field :score
   = p.submit :'Add Pain Score'
