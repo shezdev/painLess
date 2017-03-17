@@ -1,5 +1,5 @@
 %h1 No Food Logged Yet
 = form_for Foodlog.new do |f|
-  = f.label :food
-  = f.text_field :food
+  %h3 please enter your food here
+  = f.text_field :food, :id => "Food"
   = f.submit :'Add Food'

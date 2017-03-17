@@ -1,7 +1,7 @@
 %h1 No Activity Logged Yet
 = form_for Activity.new do |a|
-  = a.label :name
+  %h3 please enter your activity here
   = a.text_field :name
-  = a.label :exertion
+  %h3 how do you rate your activity on a range from 1 - 10 ?
   = a.text_field :exertion
   = a.submit :'Add Activity'
