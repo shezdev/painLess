@@ -35,6 +35,7 @@ I want to return group of foods causing high pain scores.
 - Today's food and painscores are only displayed
 - Functionality for multiple users (login etc)
 - Update and delete functionality
+- Can only add 1 Pain Score Per Day
 
 ### V4 Functionality
 - Data Visualisation of all Data
