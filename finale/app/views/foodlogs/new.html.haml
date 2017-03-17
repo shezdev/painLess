@@ -1,7 +1,8 @@
 %h1 No Food Logged Yet
 = form_for Foodlog.new do |f|
+  %h3 please enter your food here
   = f.label :date
   = f.date_field :customdate
-  = f.label :food
-  = f.text_field :food
-  = f.submit "Add Food"
+  = f.text_field :food, :id => "Food"
+  = f.submit :'Add Food'
+
