@@ -1,8 +1,9 @@
 = form_for Foodlog.new do |f|
+  %h3 please enter your food here
   = f.label :date
   = f.date_field :customdate
   = f.label :food
-  = f.text_field :food
+  = f.text_field :food, :id => "Food"
   = f.submit "Add Food"
 - if @foodlogs.any?
   - @foodlogs.each do |f|
