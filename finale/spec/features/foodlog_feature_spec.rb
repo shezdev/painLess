@@ -13,7 +13,7 @@ feature 'FoodLog' do
   end
 
   context "Creating foodlogs" do
-    scenario 'prompts user to fill out a form, then displays the new food log' do
+    scenario 'prompts user to fill out a form, then displays the users food log' do
       sign_up
       click_link_or_button 'Log Food'
       fill_in 'Food', with: 'Cucumber'

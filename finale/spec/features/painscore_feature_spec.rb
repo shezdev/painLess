@@ -10,7 +10,7 @@ feature 'Painscore' do
   end
 
   context "Recording pain score" do
-    scenario 'prompts user to fill out a form, then displays the pain scores' do
+    scenario 'prompts user to fill out a form, then displays the users pain scores' do
       sign_up
       click_link_or_button 'Log Pain'
       fill_in 'Score', with: 5
