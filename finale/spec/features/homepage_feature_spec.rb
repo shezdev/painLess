@@ -13,11 +13,12 @@ feature 'Homepage' do
   end
 
   context 'When you have logged in or created a new account' do
-    scenario 'Should display buttons for logging food and pain levels' do
+    scenario 'Should display buttons for logging food and pain and activity levels' do
       sign_up
       expect(page).not_to have_content 'Login'
       expect(page).not_to have_content 'Register'
       expect(page).to have_content('Log Food')
+      expect(page).to have_content('Log Activity')
       expect(page).to have_content('Log Pain')
       expect(page).to have_content('Results')
     end
