@@ -44,7 +44,6 @@ feature 'Activity' do
       fill_in :activity_exertion, with: 8
       click_link_or_button 'Add Activity'
       expect(current_path).to eq activities_path
-      save_and_open_page
       page.all('input')[1].click
       expect(page).not_to have_content 'Rugby'
       expect(page).not_to have_content 8

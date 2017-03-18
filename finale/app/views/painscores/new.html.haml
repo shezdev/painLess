@@ -8,5 +8,7 @@
   - @painscores.each do |p|
     %h2= p.customdate
     %h2= p.score
+    .delete
+    = button_to 'Delete', painscore_path(p), method: :delete
 - else
   %h1 No Pain Score

@@ -19,6 +19,12 @@ class FoodlogsController < ApplicationController
     params.require(:foodlog).permit(:food, :customdate)
   end
 
+  def destroy
+    @foodlog = Foodlog.find(params[:id])
+    @foodlog.delete
+    redirect_to new_foodlog_path
+  end
+
   def index
     @foodlogs = current_user.foodlogs.all
   end
