@@ -1,11 +1,18 @@
 class FoodlogsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
-    @foodlog = Foodlog.new
+    @foodlog = current_user.foodlogs.build
+    @foodlogs = current_user.foodlogs.all
   end
 
   def create
-    @foodlog = Foodlog.create(foodlog_params)
-    redirect_to foodlogs_path
+    @foodlog = current_user.foodlogs.build(foodlog_params)
+    if @foodlog.save
+      redirect_to new_foodlog_path
+    else
+      redirect_to new_foodlog_path
+    end
   end
 
   def foodlog_params
@@ -13,7 +20,7 @@ class FoodlogsController < ApplicationController
   end
 
   def index
-    @foodlogs = Foodlog.all
+    @foodlogs = current_user.foodlogs.all
   end
 
 end
