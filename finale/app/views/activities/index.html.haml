@@ -1,0 +1,7 @@
+%h1 Activity
+- if @activities.any?
+  - @activities.each do |a|
+    %h3= a.name
+    %h3= a.exertion
+- else
+  %h1 No Food Logged Yet
