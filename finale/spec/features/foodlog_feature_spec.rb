@@ -22,4 +22,3 @@ feature 'FoodLog' do
       expect(page).to have_content('Cucumber')
     end
   end
-end
