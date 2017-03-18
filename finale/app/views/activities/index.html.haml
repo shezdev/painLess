@@ -3,5 +3,7 @@
   - @activities.each do |a|
     %h3= a.name
     %h3= a.exertion
+    .delete
+    = button_to 'Delete', activity_path(a), method: :delete
 - else
   %h1 No Food Logged Yet

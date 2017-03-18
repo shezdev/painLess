@@ -18,6 +18,18 @@ class ActivitiesController < ApplicationController
     params.require(:activity).permit(:name, :exertion)
   end
 
+  def show
+    @activity = Activity.find(params[:id])
+  end
+
+
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    flash[:success] = "Activity deleted!"
+    redirect_to activities_path
+  end
+
   def index
     @activities = current_user.activities.all
   end
