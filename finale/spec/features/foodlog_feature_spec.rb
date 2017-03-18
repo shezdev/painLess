@@ -23,4 +23,14 @@ feature 'FoodLog' do
     end
   end
 
+  context "Deleting foodlogs" do
+    scenario "users can delete any individual food" do
+      sign_up
+      click_link_or_button 'Log Food'
+      fill_in 'Food', with: 'Cucumber'
+      click_link_or_button 'Add Food'
+      click_link_or_button 'Delete'
+      expect(page).not_to have_content 'Cucumber'
+    end
+  end
 end

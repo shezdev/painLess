@@ -9,5 +9,7 @@
   - @foodlogs.each do |f|
     %h2= f.customdate
     %h2= f.food
+    .delete
+    = button_to 'Delete', foodlog_path(f), method: :delete
 - else
   %h1 No Food Logged Yet

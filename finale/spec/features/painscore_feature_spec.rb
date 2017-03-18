@@ -19,4 +19,16 @@ feature 'Painscore' do
       expect(page).to have_content 5
     end
   end
+
+  context "Deleting painscores" do
+    scenario "users can delete any individual painscores" do
+      sign_up
+      click_link_or_button 'Log Pain'
+      fill_in 'Score', with: 8
+      click_link_or_button 'Add Pain Score'
+      save_and_open_page
+      click_link_or_button 'Delete'
+      expect(page).not_to have_content 8
+    end
+  end
 end

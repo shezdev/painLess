@@ -19,6 +19,12 @@ class PainscoresController < ApplicationController
     params.require(:painscore).permit(:score, :customdate)
   end
 
+  def destroy
+    @painscore = Painscore.find(params[:id])
+    @painscore.delete
+    redirect_to new_painscore_path
+  end 
+
   def index
     @painscores = current_user.painscores.all
   end

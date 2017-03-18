@@ -41,7 +41,6 @@ feature 'Results' do
 
     scenario "Display all foods that cause a pain score of 10" do
       #Day1
-      visit '/'
       sign_up
       click_link_or_button 'Log Food'
       page.find('#foodlog_customdate').set("2017-03-13")
