@@ -1,11 +1,18 @@
 class PainscoresController < ApplicationController
+  before_action :authenticate_user!
+
   def new
-    @painscore = Painscore.new
+    @painscore = current_user.painscores.build
+    @painscores = current_user.painscores.all
   end
 
   def create
-    @painscore = Painscore.create(painscore_params)
-    redirect_to painscores_path
+    @painscore = current_user.painscores.build(painscore_params)
+    if @painscore.save
+      redirect_to new_painscore_path
+    else
+      redirect_to new_painscore_path
+    end
   end
 
   def painscore_params
@@ -13,6 +20,6 @@ class PainscoresController < ApplicationController
   end
 
   def index
-    @painscores = Painscore.all
+    @painscores = current_user.painscores.all
   end
 end

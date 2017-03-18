@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Results' do
   context "No results yet" do
     scenario "Food page should display no results yet" do
-      visit '/'
+      sign_up
       click_link_or_button 'Results'
       expect(current_path).to eq results_path
       expect(page).to have_content 'No Results Yet'
@@ -12,7 +12,7 @@ feature 'Results' do
 
   context "Viewing Results" do
     scenario "Display previous day's food" do
-      visit '/'
+      sign_up
       click_link_or_button 'Log Food'
       # fill_in 'customdate', with: "16-01-2017"
         page.find('#foodlog_customdate').set("2017-03-16")
