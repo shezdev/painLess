@@ -45,7 +45,9 @@ margin-left:10px;
 	margin: 40px 60px 20px 10px;
 }
 */
-
+.hidden {
+  display:none;
+}
 .container{
 
 	max-width:960px;

@@ -1,7 +1,53 @@
 %h1 Results
-%h3
-- if !@foodlogs.empty?
-  - @foodlogs.each do |f|
-    = f.food
-- else
-  %h1 No Results Yet
+%h3{:class => "hidden", :id => "display"}
+  - if !@foodlogs.empty?
+    - @foodlogs.each do |f|
+      = f.food
+  - else
+    %h1 No Results Yet
+
+#foods{ data: { foods: @foodlogs.to_json } }
+
+
+%canvas#canvas{:height => "150", :width => "300"}
+:javascript
+  var canvas = document.getElementById('canvas').getContext('2d');
+  var fooditems = document.getElementById('display');
+  var food = fooditems.textContent.split("\n");
+  food = jQuery.grep(food, function(n){ return (n); });
+  var count = {};
+  food.forEach(function(i){count[i] = (count[i]||0)+1;});
+  var labels = [];
+  var items = [];
+  for (var prop in count) {
+  labels.push(prop);
+  items.push(count[prop]);
+  }
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+   }
+   randomColor = [];
+   for(i=0;i<labels.length;i++){
+   randomColor.push(getRandomColor())
+   };
+
+
+  var data = {
+    labels: labels,
+    datasets: [
+        {
+            data: items,
+            backgroundColor: randomColor,
+            hoverBackgroundColor: randomColor
+        }]
+  };
+
+  var myPieChart = new Chart(canvas,{
+      type: 'pie',
+      data: data,
+  });
