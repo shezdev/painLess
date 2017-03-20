@@ -5,3 +5,37 @@
     = f.food
 - else
   %h1 No Results Yet
+
+
+
+%canvas#canvas{:height => "450", :width => "600"}
+:javascript
+  canvas = document.getElementById('canvas').getContext('2d');
+
+
+  var data = {
+    labels: [
+        "Red",
+        "Blue",
+        "Yellow"
+    ],
+    datasets: [
+        {
+            data: [300,50,10],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+        }]
+  };
+
+  var myPieChart = new Chart(canvas,{
+      type: 'pie',
+      data: data,
+  });
