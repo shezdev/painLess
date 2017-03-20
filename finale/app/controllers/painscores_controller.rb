@@ -23,7 +23,7 @@ class PainscoresController < ApplicationController
     @painscore = Painscore.find(params[:id])
     @painscore.delete
     redirect_to new_painscore_path
-  end 
+  end
 
   def index
     @painscores = current_user.painscores.all

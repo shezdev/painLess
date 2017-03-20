@@ -26,7 +26,8 @@ class FoodlogsController < ApplicationController
   end
 
   def index
-    @foodlogs = current_user.foodlogs.all
+    # @foodlogs = current_user.foodlogs.all
+    @foodlogs = current_user.foodlogs.where(customdate: params[:customdate])
   end
 
 end

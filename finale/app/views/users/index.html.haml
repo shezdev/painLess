@@ -1,0 +1,41 @@
+%h3 WOOHOO!
+= form_for current_user do |form|
+  = form.fields_for :foodlogs do |foodlog_form|
+    = foodlog_form.label :date
+    = foodlog_form.date_field :customdate
+    = foodlog_form.label :food
+    = foodlog_form.text_field :food, :id => "Food"
+    -# = if foodlog_form.object.persisted?
+    -#   = foodlog_form.check_box :_destroy
+    -#   = foodlog_form.label :_destroy, "Tick to delete"
+  = form.submit "Add Everything"
+-# = form_for Painscore.new do |p|
+-#   %h3 Please enter your pain level on a scale from 1 - 10 here:
+-#   = p.label :date
+-#   = p.date_field :customdate
+-#   = p.text_field :score, :id => "Score"
+-#   = p.submit :'Add Pain Score'
+-# - if @painscores.any?
+-#   - @painscores.each do |p|
+-#     %h2= p.customdate
+-#     %h2= p.score
+-#     .delete
+-#     = button_to 'Delete', painscore_path(p), method: :delete
+-# - else
+-#   %h1 No Pain Score
+-#
+-# = form_for Foodlog.new do |f|
+-#   %h3 please enter your food here
+-#   = f.label :date
+-#   = f.date_field :customdate
+-#   = f.label :food
+-#   = f.text_field :food, :id => "Food"
+-#   = f.submit "Add Food"
+-# - if @foodlogs.any?
+-#   - @foodlogs.each do |f|
+-#     %h2= f.customdate
+-#     %h2= f.food
+-#     .delete
+-#     = button_to 'Delete', foodlog_path(f), method: :delete
+-# - else
+-#   %h1 No Food Logged Yet
