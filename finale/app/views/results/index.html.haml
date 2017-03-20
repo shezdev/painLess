@@ -1,27 +1,34 @@
 %h1 Results
-%h3
-- if !@foodlogs.empty?
-  - @foodlogs.each do |f|
-    = f.food
-- else
-  %h1 No Results Yet
+%h3#h3
+  - if !@foodlogs.empty?
+    - @foodlogs.each do |f|
+      = f.food
+  - else
+    %h1 No Results Yet
 
+#foods{ data: { foods: @foodlogs.to_json } }
 
 
 %canvas#canvas{:height => "450", :width => "600"}
 :javascript
   canvas = document.getElementById('canvas').getContext('2d');
-
+  fooditems = document.getElementById('h3');
+  food = fooditems.textContent.split("\n");
+  food = jQuery.grep(food, function(n){ return (n); });
+  var count = {};
+  food.forEach(function(i){count[i] = (count[i]||0)+1;});
+  var labels = [];
+  var items = [];
+  for (var prop in count) {
+  labels.push(prop);
+  items.push(count[prop]);
+  }
 
   var data = {
-    labels: [
-        "Red",
-        "Blue",
-        "Yellow"
-    ],
+    labels: labels,
     datasets: [
         {
-            data: [300,50,10],
+            data: items,
             backgroundColor: [
                 "#FF6384",
                 "#36A2EB",
