@@ -7,19 +7,13 @@
     %th Food
     %th Name
     %th Exertion
-- if !@painscores.empty?
-  - @painscores.each do |f|
-    %tr
-      %td= f.customdate
-      %td= f.score
-      %td= f.food
-      %td= f.name
-      %td= f.exertion
-- else
-  %h1 No Results Yet
-
-
-
-
-
-  
+  - if !@painscores.empty?
+    - @painscores.each do |f|
+      %tr
+        %td= f.customdate
+        %td= f.score
+        %td= f.food
+        %td= f.name
+        %td= f.exertion
+  - else
+    %h1 No Results Yet
