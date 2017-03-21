@@ -8,3 +8,14 @@ end
 # find_by_sql("SELECT painscores.customdate, painscores.score, foodlogs.food, activities.name, activities.exertion
 # FROM painscores, foodlogs, activities
 # WHERE foodlogs.customdate = activities.customdate")
+
+#
+# - if !@painscores.empty?
+#   - @painscores.each do |f|
+#     = f.customdate
+#     = f.score
+#     = f.food
+#     = f.name
+#     = f.exertion
+# - else
+#   %h1 No Results Yet
