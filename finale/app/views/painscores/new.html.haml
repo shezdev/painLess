@@ -12,3 +12,5 @@
     = button_to 'Delete', painscore_path(p), method: :delete
 - else
   %h1 No Pain Score
+  
+= link_to 'Next', new_foodlog_path(customdate: params[:customdate])

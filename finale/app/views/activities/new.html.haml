@@ -1,9 +1,19 @@
-%h1 No Activity Logged Yet
 = form_for Activity.new do |a|
   %h3 please enter your activity here
-  = a.label :date
-  = a.date_field :customdate
+  = a.hidden_field :customdate, :value => params[:customdate]
   = a.text_field :name
-  %h3 how do you rate your activity on a range from 1 - 10 ?
+  %h3 how do you rate your exertion?
   = a.text_field :exertion
-  = a.submit :'Add Activity'
+  = a.submit 'Add Activity'
+
+- if @activities.any?
+  - @activities.each do |a|
+    %h2= a.customdate
+    %h2= a.name
+    %h2= a.exertion
+    .delete
+    = button_to 'Delete', activity_path(a), method: :delete
+- else
+  %h1 No Activity Logged Yet
+
+= link_to 'Home', welcome_index_path

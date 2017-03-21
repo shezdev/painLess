@@ -1,10 +1,10 @@
 = form_for Foodlog.new do |f|
   %h3 please enter your food here
-  = f.label :date
-  = f.date_field :customdate
+  = f.hidden_field :customdate, :value => params[:customdate]
   = f.label :food
   = f.text_field :food, :id => "Food"
   = f.submit "Add Food"
+
 - if @foodlogs.any?
   - @foodlogs.each do |f|
     %h2= f.customdate
@@ -13,3 +13,5 @@
     = button_to 'Delete', foodlog_path(f), method: :delete
 - else
   %h1 No Food Logged Yet
+
+= link_to 'Next', new_activity_path(customdate: params[:customdate])
