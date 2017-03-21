@@ -10,14 +10,16 @@ feature 'Painscore' do
   end
 
   context "Recording pain score" do
-    scenario 'prompts user to fill out a form, then displays the users pain scores' do
+    scenario 'users can enter the date, painscore and notes' do
       sign_up
       click_link_or_button "Log Today's Data"
       page.find('#painscore_customdate').set("2017-03-16")
       fill_in 'Score', with: 5
+      fill_in 'Notes', with: 'Shooting pains and swelling in my kneecaps, also this should run for more than fifty characters'
       click_link_or_button 'Add Pain Score'
       expect(current_path).to eq new_painscore_path
       expect(page).to have_content 5
+      expect(page).to have_content 'Shooting pains and swelling in my kneecaps, also this should run for more than fifty characters'
     end
   end
 

@@ -2,15 +2,19 @@
   %h3 Please enter your pain level on a scale from 1 - 10 here:
   = p.label :date
   = p.date_field :customdate
+  = p.label :notes
+  = p.text_field :notes
   = p.text_field :score, :id => "Score"
   = p.submit :'Add Pain Score'
 - if @painscores.any?
   - @painscores.each do |p|
     %h2= p.customdate
     %h2= p.score
+    %h2= 'Notes'
+    %h2= p.notes
     .delete
     = button_to 'Delete', painscore_path(p), method: :delete
 - else
   %h1 No Pain Score
-  
+
 = link_to 'Next', new_foodlog_path(customdate: params[:customdate])
