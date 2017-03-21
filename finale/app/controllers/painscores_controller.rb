@@ -16,7 +16,7 @@ class PainscoresController < ApplicationController
   end
 
   def painscore_params
-    params.require(:painscore).permit(:score, :customdate)
+    params.require(:painscore).permit(:score, :customdate, :notes)
   end
 
   def destroy
