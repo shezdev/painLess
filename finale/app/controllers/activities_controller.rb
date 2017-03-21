@@ -3,14 +3,15 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = current_user.activities.build
+    @activities = current_user.activities.where(customdate: params[:customdate])
   end
 
   def create
     @activity = current_user.activities.build(activity_params)
     if @activity.save
-      redirect_to activities_path
+      redirect_to new_activity_path(customdate: @activity.customdate)
     else
-      redirect_to new_activity_path
+      redirect_to new_activity_path(customdate: @activity.customdate)
     end
   end
 
@@ -27,11 +28,11 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @activity.destroy
     flash[:success] = "Activity deleted!"
-    redirect_to activities_path
+    redirect_to new_activity_path(customdate: @activity.customdate)
   end
 
   def index
-    @activities = current_user.activities.all
+    @activities = current_user.activities.where(customdate: params[:customdate])
   end
 
 end
