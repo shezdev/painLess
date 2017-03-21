@@ -1,6 +1,10 @@
 class StatsController < ActionController::Base
   def index
-    # put any code here that you need
-    # (although for a static view you probably won't have any)
+    @painscores = Painscore.find_by_sql("SELECT painscores.customdate, painscores.score, foodlogs.food, activities.name, activities.exertion FROM painscores, foodlogs, activities WHERE foodlogs.customdate = activities.customdate")
   end
 end
+
+#
+# find_by_sql("SELECT painscores.customdate, painscores.score, foodlogs.food, activities.name, activities.exertion
+# FROM painscores, foodlogs, activities
+# WHERE foodlogs.customdate = activities.customdate")

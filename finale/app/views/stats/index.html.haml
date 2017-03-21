@@ -1,1 +1,10 @@
 %h1 Stats for GP
+- if !@painscores.empty?
+  - @painscores.each do |f|
+    = f.customdate
+    = f.score
+    = f.food
+    = f.name
+    = f.exertion
+- else
+  %h1 No Results Yet
