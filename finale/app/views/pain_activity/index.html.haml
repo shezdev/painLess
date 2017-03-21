@@ -7,12 +7,16 @@
   - if !@activities.empty?
     - @activities.each do |f|
       = f.exertion
+%h3{:class => "hidden", :id => "dates"}
+  - if !@painscores.empty?
+    - @painscores.each do |f|
+      = f.customdate
   - else
     %h1 No Results Yet
-
-%canvas#canvas{:height => "150", :width => "300"}
+.chart
+  %canvas#canvas{:height => "500", :width => "500"}
 :javascript
-  var canvas = document.getElementById('canvas').getContext('2d');
+  var canvas = document.getElementById('canvas')
   var painScores = document.getElementById('pains');
   painScores = painScores.textContent.split("\n");
   pain = [];
@@ -23,29 +27,16 @@
   exertion = exertion.textContent.split("\n");
   exertions = [];
   for(i=0;i<painScores.length;i++){exertions.push(parseInt(exertion[i]))}
-  exertionact = [];
+  var exertionact = [];
   exertionact = exertions.filter(function(item) {return !!item;})
 
-  function getRandomColor() {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-   }
-   randomColorp = [];
-   for(i=0;i<pains.length;i++){
-   randomColorp.push(getRandomColor())
-   };
-   randomColora = [];
-   for(i=0;i<pains.length;i++){
-   randomColora.push(getRandomColor())
-   };
+  var Dates = [];
+  for(i = 1;i<=pains.length; i++){Dates.push(i)}
+
    var myChart = new Chart(canvas, {
     type: 'line',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: Dates,
         datasets: [{
             label: 'painscores',
             fill: false,

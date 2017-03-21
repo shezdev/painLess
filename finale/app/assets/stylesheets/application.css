@@ -53,6 +53,12 @@ margin-left:10px;
 	max-width:960px;
 	margin: 0 auto;
 }
+.chart{
+  max-width:500px;
+  max-height:500px;
+  text-align: center;
+}
+
 
  header {
 
