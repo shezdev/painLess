@@ -12,7 +12,7 @@ class PainscoresController < ApplicationController
       redirect_to new_painscore_path(customdate: @painscore.customdate)
     else
       redirect_to new_painscore_path(customdate: @painscore.customdate)
-      flash[:notice] = "This didn't save, please ensure you have entered a date and painscore"
+      flash[:notice] = "This didn't save, please ensure you have entered one date and one painscore between 0 and 10"
     end
   end
 

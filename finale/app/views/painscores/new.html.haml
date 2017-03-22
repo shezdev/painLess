@@ -2,9 +2,10 @@
   %h3 Please enter your pain level on a scale from 1 - 10 here:
   = p.label :date
   = p.date_field :customdate
+  = p.label :score
+  = p.text_field :score, :id => "Score"
   = p.label :notes
   = p.text_field :notes
-  = p.text_field :score, :id => "Score"
   = p.submit :'Add Pain Score'
 
 - if @painscore.errors.any?
