@@ -11,6 +11,15 @@ feature 'FoodLog' do
     end
   end
 
+  context 'When inputting food data' do
+    scenario 'it is not valid unless food has been entered' do
+      sign_up
+      log_painscore
+      click_link_or_button 'Add Food'
+      expect(page).to have_content "This didn't save, please ensure you have entered some food!"
+    end
+  end
+
   context "Creating foodlogs" do
     scenario 'prompts user to fill out a form, then displays the users food log' do
       sign_up
