@@ -1,14 +1,14 @@
 = form_for Painscore.new do |p|
-  %h3 Please enter your pain level on a scale from 1 - 10 here:
+  %h1 Please enter your Pain Score from 1 - 10 here:
   = p.label :date
   = p.date_field :customdate
   = p.text_field :score, :id => "Score"
   = p.submit :'Add Pain Score'
 - if @painscores.any?
   - @painscores.each do |p|
-    %h2= p.customdate
-    %h2= p.score
+    %h1{:align => "center"}= p.customdate
+    %h3= p.score
     .delete
     = button_to 'Delete', painscore_path(p), method: :delete
 - else
-  %h1 No Pain Score
+  %h3 No Pain Score Logged Yet

@@ -22,15 +22,16 @@ body{
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
-	color:#777777;
+	color:#d0e1e1;
 	font-weight: 300;
+  background-image: url("https://maddancer.com/wp-content/uploads/2014/12/elegant-blue-background_fJXpR_Su.jpg");
+  background-color: #AED6F1;
 
 /*
  the shorthand for declaring font properties goes:
 font: weight size/line-height primary-font, fallback font
 */
 	font: 300 16px/1.5 'Source Sans Pro', sans-serif;
-	color:#777777;
 
 }
 /*
@@ -117,7 +118,7 @@ label {
 }
 
 nav a{
-	color:#777;
+	color:#d0e1e1;
 	text-decoration: none;
   text-align: center;
 

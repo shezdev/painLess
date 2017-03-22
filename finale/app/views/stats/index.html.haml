@@ -1,4 +1,21 @@
-%h1 Stats for GP
+%h1{:align => "center"} Statistics
+
+:css
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  body {
+    background-color: #AED6F1;
+  }
+
+%link{:href => "mystyle.css", :rel => "stylesheet", :type => "text/css"}/
 
 %table{:style => "width:100%"}
   %tr
@@ -9,7 +26,7 @@
     %th Exertion
   - if !@painscores.empty?
     - @painscores.each do |f|
-      %tr
+      %tr{:align => "center"}
         %td= f.customdate
         %td= f.score
         %td= f.food
