@@ -1,0 +1,23 @@
+%h1 Stats for GP
+
+%table{:style => "width:100%"}
+  %tr
+    %th Date
+    %th Score
+    %th Food
+    %th Name
+    %th Exertion
+    %th Notes
+  - if !@painscores.empty?
+    - @painscores.each do |f|
+      %tr
+        %td= f.customdate
+        %td= f.score
+        %td= f.food
+        %td= f.name
+        %td= f.exertion
+        %td= f.notes
+  - else
+    %h1 No Results Yet
+
+= link_to "download_pdf", stats_path(format: :pdf)

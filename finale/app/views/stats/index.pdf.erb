@@ -1,0 +1,24 @@
+<h1>Stats for GP</h1>
+
+<table style ="width:100%">
+  <th> Date </th>
+  <th> Score </th>
+  <th> Food </th>
+  <th> Name </th>
+  <th> Exertion </th>
+  <th> Notes </th>
+  <% if !@painscores.empty? %>
+    <% @painscores.each do |f| %>
+      <tr>
+        <td> <%= f.customdate %>  </td>
+        <td> <%= f.score %>       </td>
+        <td> <%= f.food %>        </td>
+        <td> <%= f.name %>        </td>
+        <td> <%= f.exertion %>    </td>
+        <td> <%= f.notes %>       </td>
+      </tr>
+      <% end %>
+  <% else %>
+  <h1>No Results Yet</h1>
+  <% end %>
+</table>
