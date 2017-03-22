@@ -12,6 +12,7 @@ class FoodlogsController < ApplicationController
       redirect_to new_foodlog_path(customdate: @foodlog.customdate)
     else
       redirect_to new_foodlog_path(customdate: @foodlog.customdate)
+      flash[:notice] = "This didn't save, please ensure you have entered some food!"
     end
   end
 

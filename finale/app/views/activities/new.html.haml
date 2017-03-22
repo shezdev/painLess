@@ -13,7 +13,6 @@
     %h2= a.exertion
     .delete
     = button_to 'Delete', activity_path(a), method: :delete
+  = link_to 'Home', welcome_index_path
 - else
   %h1 No Activity Logged Yet
-
-= link_to 'Home', welcome_index_path
