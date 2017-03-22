@@ -6,6 +6,16 @@
   = p.text_field :notes
   = p.text_field :score, :id => "Score"
   = p.submit :'Add Pain Score'
+
+- if @painscore.errors.any?
+  %section#errors
+    %h2
+      = pluralize @painscore.errors.count, "error"
+      prohibited this painscore data from being recorded:
+    %ul
+      - @painscore.errors.full_message.each do |message|
+        %li= message
+
 - if @painscores.any?
   - @painscores.each do |p|
     %h2= p.customdate
@@ -16,5 +26,7 @@
     = button_to 'Delete', painscore_path(p), method: :delete
 - else
   %h1 No Pain Score
+
+
 
 = link_to 'Next', new_foodlog_path(customdate: params[:customdate])
