@@ -9,7 +9,7 @@
           %li= link_to "Log Today's Data", new_painscore_path
           %li= link_to 'View Potential Trigger Foods', results_path
           %li= link_to 'View All My Data', new_stat_path
-          %li= link_to 'Pain_Activity', pain_activity_index_path
+          %li= link_to 'Exertion/Pain Relationship', pain_activity_index_path
           %li= link_to "Logout", destroy_user_session_path, method: :delete
   - else
     %div{:align => "center"}
@@ -17,4 +17,3 @@
         %ul{{:style => "list-style: none;"}}
           %li= link_to "Login", new_user_session_path
           %li= link_to "Register", new_user_registration_path
-

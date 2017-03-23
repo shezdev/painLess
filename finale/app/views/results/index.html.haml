@@ -50,6 +50,17 @@
   var myPieChart = new Chart(canvas,{
       type: 'pie',
       data: data,
+      options: {
+
+          legend: {
+              display: true,
+              labels: {
+                  fontColor: 'white'
+              }
+          }
+
+      }
+
   });
 %br
 = link_to 'Home', welcome_index_path

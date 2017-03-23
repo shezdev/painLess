@@ -14,9 +14,9 @@
   - else
     %h1 No Results Yet
 .chart
-  %canvas#canvas{:height => "500", :width => "500"}
+  %canvas#canvass{:height => "500", :width => "500"}
 :javascript
-  var canvas = document.getElementById('canvas')
+  var canvas = document.getElementById('canvass')
   var painScores = document.getElementById('pains');
   painScores = painScores.textContent.split("\n");
   pain = [];
@@ -49,28 +49,48 @@
     data: {
         labels: finalDates,
         datasets: [{
-            label: 'painscores',
+            label: 'Painscores',
             fill: false,
             data: pains,
-            backgroundColor: "#4083ef",
-            borderColor: "#4083ef",
-            borderWidth: 5
-        },{
-            label: 'activities',
-            fill: false,
-            data: exertionact,
             backgroundColor: "red",
             borderColor: "red",
+            borderWidth: 5
+        },{
+            label: 'Exertion',
+            fill: false,
+            data: exertionact,
+            backgroundColor: "green",
+            borderColor: "green",
             borderWidth: 5
         }]
     },
     options: {
+
+        legend: {
+            display: true,
+            labels: {
+                fontColor: 'white'
+            }
+        },
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
+        xAxes: [{
+            gridLines: {
+                display: false,
+            },
+            ticks: {
+              fontColor: "white",
+            },
+        }],
+        yAxes: [{
+            gridLines: {
+                display: false,
+            },
+            ticks: {
+              fontColor: "white",
+            },
+        }],
+            }
+
     }
+
     });
