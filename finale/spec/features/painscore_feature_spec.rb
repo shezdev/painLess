@@ -61,7 +61,7 @@ feature 'Painscore' do
       fill_in 'Score', with: 5
       click_link_or_button 'Add Pain Score'
       expect(page).to have_content 'Next'
-      click_link_or_button 'Next'
+      click_link_or_button('next')
       expect(current_path).to eq new_foodlog_path
     end
   end

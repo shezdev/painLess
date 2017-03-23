@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 
 feature 'Activity' do
   context "User can log their activity" do
-    scenario "no activity logged yet" do
+    scenario "when no activity logged yet" do
       sign_up
       log_painscore
       log_foodlog
@@ -18,13 +18,13 @@ feature 'Activity' do
       log_painscore
       log_foodlog
       fill_in :activity_name, with: 'Soccer'
-      fill_in :activity_exertion, with: 10
+      fill_in :activity_exertion, with: 9
       click_link_or_button 'Add Activity'
       fill_in :activity_name, with: 'Rugby'
       fill_in :activity_exertion, with: 8
       click_link_or_button 'Add Activity'
       expect(page).to have_content 'Soccer'
-      expect(page).to have_content 10
+      expect(page).to have_content 9
       expect(page).to have_content 'Rugby'
       expect(page).to have_content 8
     end
@@ -36,11 +36,11 @@ feature 'Activity' do
       log_painscore
       log_foodlog
       fill_in :activity_name, with: 'Soccer'
-      fill_in :activity_exertion, with: 10
+      fill_in :activity_exertion, with: 9
       click_link_or_button 'Add Activity'
       click_link_or_button 'Delete'
       expect(page).not_to have_content 'Soccer'
-      expect(page).not_to have_content 10
+      expect(page).not_to have_content 9
     end
   end
 

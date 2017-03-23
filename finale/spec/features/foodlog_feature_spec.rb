@@ -50,7 +50,7 @@ feature 'FoodLog' do
       click_link_or_button 'Add Food'
       expect(page).to have_content('Cucumber')
       expect(page).to have_content('Next')
-      click_link_or_button 'Next'
+      click_link_or_button('next')
       expect(current_path).to eq new_activity_path
     end
   end
