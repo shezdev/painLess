@@ -1,0 +1,42 @@
+<h1><center> My Data:</center></h1>
+
+<css>
+  table, th, td {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      font-family: 'Source Sans Pro', sans-serif;
+      color:#d0e1e1;
+  }
+
+  h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color:#d0e1e1;
+  }
+
+  body {
+    background-image: url("https://maddancer.com/wp-content/uploads/2014/12/elegant-blue-background_fJXpR_Su.jpg");
+  }
+</css>
+
+<table style ="width:100%">
+  <th> Date </th>
+  <th> Score </th>
+  <th> Food </th>
+  <th> Name </th>
+  <th> Exertion </th>
+  <th> Notes </th>
+  <% if !@painscores.empty? %>
+    <% @painscores.each do |f| %>
+      <tr>
+        <td> <%= f.customdate %>  </td>
+        <td> <%= f.score %>       </td>
+        <td> <%= f.food %>        </td>
+        <td> <%= f.name %>        </td>
+        <td> <%= f.exertion %>    </td>
+        <td> <%= f.notes %>       </td>
+      </tr>
+      <% end %>
+  <% else %>
+  <h1>No Results Yet</h1>
+  <% end %>
+</table>

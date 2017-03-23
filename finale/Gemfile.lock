@@ -139,6 +139,8 @@ GEM
       ffi (>= 0.5.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rspec-collection_matchers (1.1.3)
+      rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -195,6 +197,8 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    wicked_pdf (1.1.0)
+    wkhtmltopdf-binary (0.12.3.1)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -215,6 +219,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.2)
+  rspec-collection_matchers
   rspec-rails
   sass-rails (~> 5.0)
   spring
@@ -223,6 +228,8 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  wicked_pdf
+  wkhtmltopdf-binary
 
 BUNDLED WITH
    1.14.6

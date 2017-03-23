@@ -7,8 +7,7 @@ feature 'Homepage' do
       expect(page.status_code).to eq 200
       expect(page).to have_content 'Login'
       expect(page).to have_content 'Register'
-      expect(page).not_to have_content 'Log Food'
-      expect(page).not_to have_content 'Log Pain'
+      expect(page).not_to have_content "Log Today's Data"
     end
   end
 
@@ -17,8 +16,7 @@ feature 'Homepage' do
       sign_up
       expect(page).not_to have_content 'Login'
       expect(page).not_to have_content 'Register'
-      expect(page).to have_content('Log Food')
-      expect(page).to have_content('Log Pain')
+      expect(page).to have_content("Log Today's Data")
       expect(page).to have_content('Results')
     end
   end
