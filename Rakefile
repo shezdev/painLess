@@ -4,3 +4,13 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+
+if ENV['RAILS_ENV'] != 'production'
+
+  require 'rspec/core/rake_task'
+
+  RSpec::Core::RakeTask.new :spec
+
+  task default: [:spec]
+end
