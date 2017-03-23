@@ -10,15 +10,15 @@ end
 def log_painscore
   visit '/'
   click_link_or_button "Log Today's Data"
-  page.find('#painscore_customdate').set("2017-03-16")
+  page.find('#painscore_customdate').set("2017-03-25")
   fill_in 'Score', with: 5
   click_link_or_button 'Add Pain Score'
-  click_link_or_button 'Next'
+  click_link 'Next'
 end
 
 def log_foodlog
   fill_in 'Food', with: 'Cucumber'
-  click_link_or_button 'Add Food'
+  click_button 'Add Food'
   click_link_or_button 'Next'
 end
 
