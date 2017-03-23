@@ -1,5 +1,5 @@
 = form_for Foodlog.new do |f|
-  %h3 please enter your food here
+  %h1 Please enter your food here:
   = f.hidden_field :customdate, :value => params[:customdate]
   = f.label :food
   = f.text_field :food, :id => "Food"
@@ -7,10 +7,10 @@
 
 - if @foodlogs.any?
   - @foodlogs.each do |f|
-    %h2= f.customdate
-    %h2= f.food
+    %h3{:align => "center"}= f.customdate
+    %h3= f.food
     .delete
     = button_to 'Delete', foodlog_path(f), method: :delete
   = link_to 'Next', new_activity_path(customdate: params[:customdate])
 - else
-  %h1 No Food Logged Yet
+  %h3 No Food Logged Yet

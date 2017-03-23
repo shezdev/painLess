@@ -1,4 +1,21 @@
-%h1 Stats for GP
+%h1{:align => "center"} My Data:
+
+:css
+  table, th, td {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      font-family: 'Source Sans Pro', sans-serif;
+      color:#d0e1e1;
+  }
+
+  h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color:#d0e1e1;
+  }
+
+  body {
+    background-image: url("https://maddancer.com/wp-content/uploads/2014/12/elegant-blue-background_fJXpR_Su.jpg");
+  }
 
 %table{:style => "width:100%"}
   %tr
@@ -10,7 +27,7 @@
     %th Notes
   - if !@painscores.empty?
     - @painscores.each do |f|
-      %tr
+      %tr{:align => "center"}
         %td= f.customdate
         %td= f.score
         %td= f.food
@@ -20,4 +37,6 @@
   - else
     %h1 No Results Yet
 
-= link_to "download_pdf", stats_path(format: :pdf)
+= link_to "Create PDF Report", stats_path(format: :pdf)
+%br
+= link_to 'Home', welcome_index_path

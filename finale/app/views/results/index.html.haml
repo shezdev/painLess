@@ -1,4 +1,4 @@
-%h1 Potential Trigger Foods eaten on the day before highest pain level
+%h1 Potential Trigger Foods
 %h3{:class => "hidden", :id => "display"}
   - if !@foodlogs.empty?
     - @foodlogs.each do |f|
@@ -51,3 +51,5 @@
       type: 'pie',
       data: data,
   });
+%br
+= link_to 'Home', welcome_index_path

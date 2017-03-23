@@ -1,18 +1,18 @@
 = form_for Activity.new do |a|
-  %h3 please enter your activity here
+  %h3 Please enter any activities:
   = a.hidden_field :customdate, :value => params[:customdate]
   = a.text_field :name
-  %h3 how do you rate your exertion?
+  %h3 Please enter activity exertion on a scale from 1 - 10 here:
   = a.text_field :exertion
   = a.submit 'Add Activity'
 
 - if @activities.any?
   - @activities.each do |a|
-    %h2= a.customdate
-    %h2= a.name
-    %h2= a.exertion
+    %h3{:align => "center"}= a.customdate
+    %h3= a.name
+    %h3= a.exertion
     .delete
     = button_to 'Delete', activity_path(a), method: :delete
   = link_to 'Home', welcome_index_path
 - else
-  %h1 No Activity Logged Yet
+  %h3 No Activity Logged Yet
