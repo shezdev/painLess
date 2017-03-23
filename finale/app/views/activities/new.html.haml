@@ -15,4 +15,4 @@
     = button_to 'Delete', activity_path(a), method: :delete
 - else
   %h3 No Activity Logged Yet
-= link_to 'Home', welcome_index_path
+= link_to '<button type="button">Home</button>'.html_safe, welcome_index_path

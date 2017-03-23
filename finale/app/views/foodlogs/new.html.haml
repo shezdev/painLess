@@ -11,6 +11,7 @@
     %h3= f.food
     .delete
     = button_to 'Delete', foodlog_path(f), method: :delete
-  = link_to 'Next', new_activity_path(customdate: params[:customdate])
+  = link_to '<button type="button">Next</button>'.html_safe, new_activity_path(customdate: params[:customdate])
+
 - else
   %h3 No Food Logged Yet
