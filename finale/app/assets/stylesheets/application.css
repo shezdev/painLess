@@ -59,6 +59,11 @@ margin-left:10px;
   max-height:500px;
   text-align: center;
 }
+#canvass{
+  display:center;
+  margin-left: 300px;
+}
+
 
  header {
 
