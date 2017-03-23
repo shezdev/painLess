@@ -4,7 +4,7 @@ feature 'Results' do
   context "No results yet" do
     scenario "Food page should display no results yet" do
       sign_up
-      click_link_or_button 'Results'
+      click_link_or_button 'View Potential Trigger Foods'
       expect(current_path).to eq results_path
       expect(page).to have_content 'No Results Yet'
     end
