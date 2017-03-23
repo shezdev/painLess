@@ -1,13 +1,17 @@
-- if user_signed_in?
-  %h1 Willkommen in your pain management app
-  %nav
-  = link_to "Log Today's Data", new_painscore_path
-  = link_to 'Results', results_path
-  = link_to 'Stats', new_stat_path
-  %br
-  = link_to "Logout", destroy_user_session_path, method: :delete
-- else
-  %br
-  = link_to "Login", new_user_session_path
-  %br
-  = link_to "Register", new_user_registration_path
+%div{:align => "center"}
+  %h2 Welcome to PainLess
+  %h3 Your Pain Management App
+  - if user_signed_in?
+    %div{:align => "center"}
+      %nav{display:'inline-block;'}
+        %ul{{:style => "list-style: none;"}}
+          %li= link_to "Log Today's Data", new_painscore_path
+          %li= link_to 'View Potential Trigger Foods', results_path
+          %li= link_to 'View All My Data', new_stat_path
+          %li= link_to "Logout", destroy_user_session_path, method: :delete
+  - else
+    %div{:align => "center"}
+      %nav{display:'inline-block;'}
+        %ul{{:style => "list-style: none;"}}
+          %li= link_to "Login", new_user_session_path
+          %li= link_to "Register", new_user_registration_path
