@@ -18,20 +18,25 @@
 body{
 /* its always best to set up the fonts for the whole page first */
 
-
+  text-align:center;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.5;
-	color:#d0e1e1;
+	/*color:#ffffff;*/
+  color:#074ab7;
 	font-weight: 300;
-  background-image: url("https://maddancer.com/wp-content/uploads/2014/12/elegant-blue-background_fJXpR_Su.jpg");
-  background-color: #AED6F1;
+  /*background-image: url("https://maddancer.com/wp-content/uploads/2014/12/elegant-blue-background_fJXpR_Su.jpg");*/
+
+  /*background-image: url("https://static.pexels.com/photos/97558/pexels-photo-97558.jpeg");*/
+  /*background-size: cover;*/
+  background-image: url("bg2.jpg");
+  /*background-color: #AED6F1;*/
 
 /*
  the shorthand for declaring font properties goes:
 font: weight size/line-height primary-font, fallback font
 */
-	font: 300 16px/1.5 'Source Sans Pro', sans-serif;
+	font: 300 18px/1.5 'Source Sans Pro', sans-serif;
 
 }
 /*
@@ -123,10 +128,11 @@ label {
 }
 
 nav a{
-	color:#d0e1e1;
+	color:#074ab7;
 	text-decoration: none;
   text-align: center;
-
+  /*text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray,0 -1px gray;*/
+  /*text-outline: black*/
 /* this padding is worked out by taking the overall height of the header (76px), and taking away the height
  of the header (76px), and taking away the height of the link
  itself (20px), which leaves us with 56px/2 */
@@ -349,11 +355,6 @@ input[type="submit"] {
 
 	background-color: #C1C7C9;
 	color: #777777;
-
-/* this will tell the button to use the hand pointer cursor
-instead of the standard mouse (signals that it's somehting
-that needs to be clicked */
-
 	cursor: pointer;
 }
 
@@ -446,5 +447,12 @@ margin-top: 10px;}
 .intro {
 	margin-top:0;
 }
+
+#sign-up {
+  background-color: #C1C7C9;
+  color: #777777;
+  cursor: pointer;
+}
+
 
 }
