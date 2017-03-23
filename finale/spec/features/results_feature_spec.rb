@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Results' do
-  context "No results yet" do
-    scenario "Food page should display no results yet" do
+feature 'Trigger Foods' do
+  context "No data yet" do
+    scenario "Trigger foods relationship page should display no results yet" do
       sign_up
       click_link_or_button 'View Potential Trigger Foods'
       expect(current_path).to eq results_path
@@ -12,31 +12,15 @@ feature 'Results' do
 
   context "Viewing Results" do
     scenario "Display previous day's food when today's pain is 10" do
-      # sign_up
-      # click_link_or_button 'Log Food'
-      # page.find('#foodlog_customdate').set("2017-03-16")
-      # fill_in 'Food', with: 'McDonalds'
-      # click_link_or_button 'Add Food'
-      # visit '/'
-      # click_link_or_button 'Log Pain'
-      # page.find('#painscore_customdate').set("2017-03-16")
-      # fill_in 'Score', with: 2
-      # click_link_or_button 'Add Pain Score'
-      #
-      # visit '/'
-      # click_link_or_button 'Log Food'
-      # page.find('#foodlog_customdate').set("2017-03-17")
-      # fill_in 'Food', with: 'Tomato'
-      # click_link_or_button 'Add Food'
-      # visit '/'
-      # click_link_or_button 'Log Pain'
-      # page.find('#painscore_customdate').set("2017-03-17")
-      # fill_in 'Score', with: 10
-      # click_link_or_button 'Add Pain Score'
-      #
-      # visit '/'
-      # click_link_or_button 'Results'
-      # expect(page).to have_content 'McDonalds'
+      sign_up
+      log_painscore
+      log_foodlog('hamburger')
+      log_activity
+      log_painscore(10,"2017-03-17")
+      log_foodlog
+      log_activity
+      click_link_or_button 'View Potential Trigger Foods'
+      expect(page).to have_content 'hamburger'
     end
 
     scenario "Display all foods that cause a pain score of 10" do

@@ -5,7 +5,7 @@ feature 'FoodLog' do
     scenario "Food page should display a prompt to add a foodstuff item" do
       sign_up
       log_painscore
-      # expect(current_path).to eq new_foodlog_path
+      expect(current_path).to eq new_foodlog_path
       expect(page).to have_content 'No Food Logged Yet'
       expect(page).to have_button 'Add Food'
     end
@@ -50,7 +50,7 @@ feature 'FoodLog' do
       click_link_or_button 'Add Food'
       expect(page).to have_content('Cucumber')
       expect(page).to have_content('Next')
-      click_link 'Next'
+      click_link_or_button('next')
       expect(current_path).to eq new_activity_path
     end
   end
