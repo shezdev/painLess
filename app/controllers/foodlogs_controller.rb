@@ -26,9 +26,4 @@ class FoodlogsController < ApplicationController
     redirect_to new_foodlog_path(customdate: @foodlog.customdate)
   end
 
-  def index
-    # @foodlogs = current_user.foodlogs.all
-    @foodlogs = current_user.foodlogs.where(customdate: params[:customdate])
-  end
-
 end

@@ -25,9 +25,4 @@ class PainscoresController < ApplicationController
     @painscore.delete
     redirect_to new_painscore_path(customdate: @painscore.customdate)
   end
-
-  def index
-    @painscores = current_user.painscores.where(customdate: params[:customdate])
-  end
-
 end

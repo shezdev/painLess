@@ -10,8 +10,6 @@ class ActivitiesController < ApplicationController
     @activity = current_user.activities.build(activity_params)
     if @activity.save
       redirect_to new_activity_path(customdate: @activity.customdate)
-    else
-      redirect_to new_activity_path(customdate: @activity.customdate)
     end
   end
 
@@ -19,20 +17,11 @@ class ActivitiesController < ApplicationController
     params.require(:activity).permit(:name, :exertion, :customdate)
   end
 
-  def show
-    @activity = Activity.find(params[:id])
-  end
-
-
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
     flash[:success] = "Activity deleted!"
     redirect_to new_activity_path(customdate: @activity.customdate)
-  end
-
-  def index
-    @activities = current_user.activities.where(customdate: params[:customdate])
   end
 
 end
