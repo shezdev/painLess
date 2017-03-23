@@ -17,7 +17,7 @@ feature 'Homepage' do
       expect(page).not_to have_content 'Login'
       expect(page).not_to have_content 'Register'
       expect(page).to have_content("Log Today's Data")
-      expect(page).to have_content('Results')
+      expect(page).to have_content('View Potential Trigger Foods')
     end
   end
 end
