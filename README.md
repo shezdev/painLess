@@ -1,6 +1,8 @@
-# Pain Awareness / Management Web App
+# PainLess - The Pain Management Web App
 
-It tracks what you eat with when you have chronic pain and relates them.
+[![Coverage Status](https://coveralls.io/repos/github/shezdev/final_project/badge.svg?branch=master)](https://coveralls.io/github/shezdev/final_project?branch=master)
+
+The purpose of this is to allow those who suffer with chronic conditions such as Arthritis and IBS to track their daily pain levels alongside environmental factors such as food and activities, and allows them to identify possible "trigger foods" - i.e. foods that may exacerbate their symptoms.
 
 ## User Stories
 
