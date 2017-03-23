@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :painscores
   resources :results
   resources :activities
+  resources :pain_activity
   resources :stats
-
   get 'welcome/index'
 
   root 'welcome#index'

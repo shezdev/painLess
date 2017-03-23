@@ -1,0 +1,76 @@
+%h1 Relation between exercise activity and painscores
+%h3{:class => "hidden", :id => "pains"}
+  - if !@painscores.empty?
+    - @painscores.each do |f|
+      = f.score
+%h3{:class => "hidden", :id => "activity"}
+  - if !@activities.empty?
+    - @activities.each do |f|
+      = f.exertion
+%h3{:class => "hidden", :id => "dates"}
+  - if !@painscores.empty?
+    - @painscores.each do |f|
+      = f.customdate
+  - else
+    %h1 No Results Yet
+.chart
+  %canvas#canvas{:height => "500", :width => "500"}
+:javascript
+  var canvas = document.getElementById('canvas')
+  var painScores = document.getElementById('pains');
+  painScores = painScores.textContent.split("\n");
+  pain = [];
+  for(i=0;i<painScores.length;i++){pain.push(parseInt(painScores[i]))}
+  pains = [];
+  pains = pain.filter(function(item) {return !!item;})
+  var exertion = document.getElementById('activity');
+  exertion = exertion.textContent.split("\n");
+  exertions = [];
+  for(i=0;i<painScores.length;i++){exertions.push(parseInt(exertion[i]))}
+  var exertionact = [];
+  exertionact = exertions.filter(function(item) {return !!item;})
+
+  var Dates = [];
+  for(i = 1;i<=pains.length; i++){Dates.push(i)}
+  var dateTag = document.getElementById("dates")
+  var array = [];
+  var array1 = [];
+  var array2 = [];
+  var finalDates = [];
+  array = dateTag.textContent.split("")
+  for(i=0;i<array.length;i++){array1.push(parseInt(array[i]))}
+  for(i=0;i<array1.length;i++){if(Number.isNaN(array1[i]) === false){ array2.push(array1[i])}}
+  string = array2.join("");
+  finalDates = string.match(/.{1,8}/g);
+
+
+   var myChart = new Chart(canvas, {
+    type: 'line',
+    data: {
+        labels: finalDates,
+        datasets: [{
+            label: 'painscores',
+            fill: false,
+            data: pains,
+            backgroundColor: "#4083ef",
+            borderColor: "#4083ef",
+            borderWidth: 5
+        },{
+            label: 'activities',
+            fill: false,
+            data: exertionact,
+            backgroundColor: "red",
+            borderColor: "red",
+            borderWidth: 5
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+    });
