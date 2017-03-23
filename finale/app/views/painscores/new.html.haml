@@ -25,6 +25,6 @@
     %h3= p.notes
     .delete
     = button_to 'Delete', painscore_path(p), method: :delete
-  = link_to 'Next', new_foodlog_path(customdate: params[:customdate])
+    = link_to '<button type="button">Next</button>'.html_safe, new_foodlog_path(customdate: params[:customdate])
 - else
   %h3 No Pain Scores Currently

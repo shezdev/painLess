@@ -5,24 +5,23 @@
       border: 1px solid grey;
       border-collapse: collapse;
       font-family: 'Source Sans Pro', sans-serif;
-      color:#d0e1e1;
   }
 
   h1 {
     font-family: 'Source Sans Pro', sans-serif;
-    color:#d0e1e1;
+    color: black;
   }
 
   body {
-    background-image: url("https://maddancer.com/wp-content/uploads/2014/12/elegant-blue-background_fJXpR_Su.jpg");
+    text-align:center;
   }
 
 %table{:style => "width:100%"}
   %tr
     %th Date
-    %th Score
+    %th Pain Score
     %th Food
-    %th Name
+    %th Activity
     %th Exertion
     %th Notes
   - if !@painscores.empty?
@@ -37,6 +36,6 @@
   - else
     %h1 No Results Yet
 
-= link_to "Create PDF Report", stats_path(format: :pdf)
+= link_to '<button type="button">Create PDF Report</button>'.html_safe, stats_path(format: :pdf)
 %br
-= link_to 'Home', welcome_index_path
+= link_to '<button type="button">Home</button>'.html_safe, welcome_index_path
