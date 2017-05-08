@@ -1,8 +1,11 @@
 # PainLess - The Pain Management Web App
 [![Coverage Status](https://coveralls.io/repos/github/shezdev/painLess/badge.svg?branch=master)](https://coveralls.io/github/shezdev/painLess?branch=master)
+
+5fd4f446b0a3873148edbc3fe7f8e8054ebce2f7c336acaf4c8774359db0bf21
+
 ### A #Techforgood app that tracks dietary and physical environmental factors and returns data correlated with levels of pain inputted by the user.
 
-** Built by [Shereen Finney](https://github.com/shezdev), [Samir Gossain](https://github.com/sim-ware), [Jack Henderson](https://github.com/artfulgarfunk) and [Konrad Schlatte](https://github.com/schlattk) in 8 days as the final project for Makers Academy.**
+**Built by [Shereen Finney](https://github.com/shezdev), [Samir Gossain](https://github.com/sim-ware), [Jack Henderson](https://github.com/artfulgarfunk) and [Konrad Schlatte](https://github.com/schlattk) in 8 days as the final project for Makers Academy.**
 ![PainLess - The Pain Management Web App - Login Page](public/painless_app_login.png)
 ## Motivation
 The purpose of this is to allow those who suffer with chronic conditions such as Arthritis and IBS to track their daily pain levels alongside environmental factors such as food and physical activities. This allows them to identify possible triggers for sudden flare ups - e.g. certain foods that may exacerbate their symptoms. In addition, users can access a log of all their inputs which can be exported to PDF, this can be shown to their GP to give a broad overview of their lifestyle and correlated pain.
