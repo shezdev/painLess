@@ -2528,8 +2528,8 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 147ms (Views: 135.1ms | ActiveRecord: 1.9ms)
 
 
-  [1m[35m (460.1ms)[0m  [1m[35mCREATE DATABASE "finale_development" ENCODING = 'unicode'[0m
-  [1m[35m (273.6ms)[0m  [1m[35mCREATE DATABASE "finale_test" ENCODING = 'unicode'[0m
+  [1m[35m (460.1ms)[0m  [1m[35mCREATE DATABASE "painless_development" ENCODING = 'unicode'[0m
+  [1m[35m (273.6ms)[0m  [1m[35mCREATE DATABASE "painless_test" ENCODING = 'unicode'[0m
   [1m[35m (36.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
   [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1608945303356179110);[0m
@@ -3229,10 +3229,10 @@ Sent data file_name.pdf (4.5ms)
 Completed 200 OK in 4533ms (Views: 3.6ms | ActiveRecord: 0.9ms)
 
 
-  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "finale_development" ENCODING = 'unicode'[0m
-  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "finale_test" ENCODING = 'unicode'[0m
-  [1m[35m (445.4ms)[0m  [1m[35mCREATE DATABASE "finale_development" ENCODING = 'unicode'[0m
-  [1m[35m (262.2ms)[0m  [1m[35mCREATE DATABASE "finale_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "painless_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "painless_test" ENCODING = 'unicode'[0m
+  [1m[35m (445.4ms)[0m  [1m[35mCREATE DATABASE "painless_development" ENCODING = 'unicode'[0m
+  [1m[35m (262.2ms)[0m  [1m[35mCREATE DATABASE "painless_test" ENCODING = 'unicode'[0m
   [1m[35m (20.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
   [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1608945303356179110);[0m
@@ -4445,5 +4445,588 @@ Processing by WelcomeController#index as HTML
   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   Rendered welcome/index.html.haml within layouts/application (23.2ms)
 Completed 200 OK in 104ms (Views: 99.2ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (6046.4ms)[0m  [1m[35mCREATE DATABASE "painless_development" ENCODING = 'unicode'[0m
+  [1m[35m (763.4ms)[0m  [1m[35mCREATE DATABASE "painless_test" ENCODING = 'unicode'[0m
+  [1m[35m (255.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (17.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6964136751681390540);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFoodlogs (20170315161031)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (44.7ms)[0m  [1m[35mCREATE TABLE "foodlogs" ("id" serial primary key, "food" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170315161031"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePainscores (20170315173105)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "painscores" ("id" serial primary key, "score" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170315173105"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActivities (20170316145045)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "activities" ("id" serial primary key, "name" character varying, "exertion" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170316145045"]]
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCustomdateToFoodlogs (20170317121323)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "foodlogs" ADD "customdate" date[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317121323"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCustomdateToPainscores (20170317123010)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "painscores" ADD "customdate" date[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317123010"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20170317171729)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317171729"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToFoodlogs (20170317180007)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "foodlogs" ADD "user_id" integer[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_foodlogs_on_user_id" ON "foodlogs"  ("user_id")[0m
+  [1m[35m (103.9ms)[0m  [1m[35mALTER TABLE "foodlogs" ADD CONSTRAINT "fk_rails_54f4a92042"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317180007"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToPainscores (20170317180016)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "painscores" ADD "user_id" integer[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE  INDEX  "index_painscores_on_user_id" ON "painscores"  ("user_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "painscores" ADD CONSTRAINT "fk_rails_823571cc03"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170317180016"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToActivities (20170318130122)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "activities" ADD "user_id" integer[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_activities_on_user_id" ON "activities"  ("user_id")[0m
+  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE "activities" ADD CONSTRAINT "fk_rails_7e11bb717f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170318130122"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCustomDateToActivities (20170320154024)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "activities" ADD "customdate" date[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170320154024"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNotesToPainscores (20170321145924)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "painscores" ADD "notes" text[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170321145924"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-05-08 16:44:13 UTC], ["updated_at", 2017-05-08 16:44:13 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6964136751681390540)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-05-08 17:45:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (18.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (119.2ms)
+Started GET "/users/sign_up" for ::1 at 2017-05-08 17:45:42 +0100
+Completed 200 OK in 2164ms (Views: 2120.6ms | ActiveRecord: 0.0ms)
+
+
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (214.2ms)
+Completed 200 OK in 358ms (Views: 270.9ms | ActiveRecord: 75.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-08 17:45:46 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 67ms (Views: 66.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-08 17:46:01 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AUOCBCp1qVe3iwWhtAD0Z/0jkNMv7dDmXOxUjMXCPxaaWConeV6ZJw3y2JIMdN+nV01dfoCqJ0ZVxhQhi9Czeg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (11.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[35mSQL (26.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$11$mMX4h0TnC8ACL9z.aHb4FOhVNWJeDbnCZMHEOR2exwMj6U0/V5/7W"], ["created_at", 2017-05-08 16:46:02 UTC], ["updated_at", 2017-05-08 16:46:02 UTC]]
+  [1m[35m (18.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-05-08 16:46:02 UTC], ["last_sign_in_at", 2017-05-08 16:46:02 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2017-05-08 16:46:02 UTC], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 880ms (ActiveRecord: 57.9ms)
+
+
+Started GET "/" for ::1 at 2017-05-08 17:46:02 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 110ms (Views: 99.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/painscores/new" for ::1 at 2017-05-08 17:46:07 +0100
+Processing by PainscoresController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering painscores/new.html.haml within layouts/application
+  [1m[35m (19.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" IS NULL[0m  [["user_id", 1]]
+  Rendered painscores/new.html.haml within layouts/application (36.9ms)
+Completed 200 OK in 261ms (Views: 65.5ms | ActiveRecord: 58.5ms)
+
+
+Started POST "/painscores" for ::1 at 2017-05-08 17:46:19 +0100
+Processing by PainscoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G3hwumC81x4b5bwCN0+QxMmXB8y6NODE3BTk55qPGxqAY9iZM5fnbqGcYTGPO7sEY/nKYRVzF2TVPqRK1J2Xdg==", "painscore"=>{"customdate"=>"2017-05-07", "score"=>"1", "notes"=>""}, "commit"=>"Add Pain Score"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPainscore Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "painscores" WHERE "painscores"."customdate" = $1 LIMIT $2[0m  [["customdate", "2017-05-07"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "painscores" ("score", "created_at", "updated_at", "customdate", "user_id", "notes") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["score", 1], ["created_at", 2017-05-08 16:46:19 UTC], ["updated_at", 2017-05-08 16:46:19 UTC], ["customdate", Sun, 07 May 2017], ["user_id", 1], ["notes", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/painscores/new?customdate=2017-05-07
+Completed 302 Found in 63ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/painscores/new?customdate=2017-05-07" for ::1 at 2017-05-08 17:46:19 +0100
+Processing by PainscoresController#new as HTML
+  Parameters: {"customdate"=>"2017-05-07"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering painscores/new.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" = $2[0m  [["user_id", 1], ["customdate", Sun, 07 May 2017]]
+  [1m[36mPainscore Load (0.4ms)[0m  [1m[34mSELECT "painscores".* FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" = $2[0m  [["user_id", 1], ["customdate", Sun, 07 May 2017]]
+  Rendered painscores/new.html.haml within layouts/application (10.2ms)
+Completed 200 OK in 68ms (Views: 60.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/foodlogs/new?customdate=2017-05-07" for ::1 at 2017-05-08 17:46:31 +0100
+Processing by FoodlogsController#new as HTML
+  Parameters: {"customdate"=>"2017-05-07"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering foodlogs/new.html.haml within layouts/application
+  [1m[35m (42.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Sun, 07 May 2017]]
+  Rendered foodlogs/new.html.haml within layouts/application (74.6ms)
+Completed 200 OK in 235ms (Views: 165.2ms | ActiveRecord: 48.3ms)
+
+
+Started POST "/foodlogs" for ::1 at 2017-05-08 17:46:36 +0100
+Processing by FoodlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uBU/Pc56SCgGVaYaK1Yi4bkwFkPAkztrEELFjhlTwykjDpcenVF4WLwseymTIgkhE17b7m/UzMsZaIUjV0FPRQ==", "foodlog"=>{"customdate"=>"2017-05-07", "food"=>"Tomatoes"}, "commit"=>"Add Food"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "foodlogs" ("food", "created_at", "updated_at", "customdate", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["food", "Tomatoes"], ["created_at", 2017-05-08 16:46:36 UTC], ["updated_at", 2017-05-08 16:46:36 UTC], ["customdate", Sun, 07 May 2017], ["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/foodlogs/new?customdate=2017-05-07
+Completed 302 Found in 13ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/foodlogs/new?customdate=2017-05-07" for ::1 at 2017-05-08 17:46:36 +0100
+Processing by FoodlogsController#new as HTML
+  Parameters: {"customdate"=>"2017-05-07"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering foodlogs/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Sun, 07 May 2017]]
+  [1m[36mFoodlog Load (0.2ms)[0m  [1m[34mSELECT "foodlogs".* FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Sun, 07 May 2017]]
+  Rendered foodlogs/new.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 51ms (Views: 44.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/activities/new?customdate=2017-05-07" for ::1 at 2017-05-08 17:46:38 +0100
+Processing by ActivitiesController#new as HTML
+  Parameters: {"customdate"=>"2017-05-07"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering activities/new.html.haml within layouts/application
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = $1 AND "activities"."customdate" = $2[0m  [["user_id", 1], ["customdate", Sun, 07 May 2017]]
+  Rendered activities/new.html.haml within layouts/application (18.8ms)
+Completed 200 OK in 83ms (Views: 53.3ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/welcome/index" for ::1 at 2017-05-08 17:46:45 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 84ms (Views: 51.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/painscores/new" for ::1 at 2017-05-08 17:46:47 +0100
+Processing by PainscoresController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering painscores/new.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" IS NULL[0m  [["user_id", 1]]
+  Rendered painscores/new.html.haml within layouts/application (10.6ms)
+Completed 200 OK in 82ms (Views: 61.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/painscores" for ::1 at 2017-05-08 17:46:53 +0100
+Processing by PainscoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FjGoAQSzj56BbkYWWISw49fo9cgk8F62aLZVfeIBilaNKgAiV5i/7jsXmyXg8JsjfYY4ZYu3qRZhnBXQrBMGOg==", "painscore"=>{"customdate"=>"2017-05-08", "score"=>"10", "notes"=>""}, "commit"=>"Add Pain Score"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPainscore Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "painscores" WHERE "painscores"."customdate" = $1 LIMIT $2[0m  [["customdate", "2017-05-08"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "painscores" ("score", "created_at", "updated_at", "customdate", "user_id", "notes") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["score", 10], ["created_at", 2017-05-08 16:46:53 UTC], ["updated_at", 2017-05-08 16:46:53 UTC], ["customdate", Mon, 08 May 2017], ["user_id", 1], ["notes", ""]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/painscores/new?customdate=2017-05-08
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/painscores/new?customdate=2017-05-08" for ::1 at 2017-05-08 17:46:53 +0100
+Processing by PainscoresController#new as HTML
+  Parameters: {"customdate"=>"2017-05-08"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering painscores/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" = $2[0m  [["user_id", 1], ["customdate", Mon, 08 May 2017]]
+  [1m[36mPainscore Load (0.2ms)[0m  [1m[34mSELECT "painscores".* FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" = $2[0m  [["user_id", 1], ["customdate", Mon, 08 May 2017]]
+  Rendered painscores/new.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 49ms (Views: 43.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/foodlogs/new?customdate=2017-05-08" for ::1 at 2017-05-08 17:46:55 +0100
+Processing by FoodlogsController#new as HTML
+  Parameters: {"customdate"=>"2017-05-08"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering foodlogs/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Mon, 08 May 2017]]
+  Rendered foodlogs/new.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 91ms (Views: 45.0ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/foodlogs" for ::1 at 2017-05-08 17:47:02 +0100
+Processing by FoodlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gyVVQ972TH5nbMeH3JK/K/Aqzy093l3P+YyFBiDPxyIYPv1gjd18Dt0VGrRk5pTrWkQCgJKZqm/wpsWrbt1LTg==", "foodlog"=>{"customdate"=>"2017-05-08", "food"=>"Lettuce"}, "commit"=>"Add Food"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "foodlogs" ("food", "created_at", "updated_at", "customdate", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["food", "Lettuce"], ["created_at", 2017-05-08 16:47:02 UTC], ["updated_at", 2017-05-08 16:47:02 UTC], ["customdate", Mon, 08 May 2017], ["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/foodlogs/new?customdate=2017-05-08
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/foodlogs/new?customdate=2017-05-08" for ::1 at 2017-05-08 17:47:02 +0100
+Processing by FoodlogsController#new as HTML
+  Parameters: {"customdate"=>"2017-05-08"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering foodlogs/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Mon, 08 May 2017]]
+  [1m[36mFoodlog Load (0.2ms)[0m  [1m[34mSELECT "foodlogs".* FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Mon, 08 May 2017]]
+  Rendered foodlogs/new.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/activities/new?customdate=2017-05-08" for ::1 at 2017-05-08 17:47:03 +0100
+Processing by ActivitiesController#new as HTML
+  Parameters: {"customdate"=>"2017-05-08"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering activities/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = $1 AND "activities"."customdate" = $2[0m  [["user_id", 1], ["customdate", Mon, 08 May 2017]]
+  Rendered activities/new.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 76ms (Views: 49.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/welcome/index" for ::1 at 2017-05-08 17:47:04 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 88ms (Views: 51.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/results" for ::1 at 2017-05-08 17:47:06 +0100
+Processing by ResultsController#index as HTML
+  [1m[36mFoodlog Load (19.6ms)[0m  [1m[34mSELECT * FROM foodlogs JOIN painscores ON (foodlogs.customdate = (painscores.customdate -1)) WHERE painscores.score = '10'[0m
+  Rendering results/index.html.haml within layouts/application
+  Rendered results/index.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 92ms (Views: 47.1ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/welcome/index" for ::1 at 2017-05-08 17:47:08 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (20.3ms)
+Completed 200 OK in 77ms (Views: 71.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pain_activity" for ::1 at 2017-05-08 17:47:10 +0100
+Processing by PainActivityController#index as HTML
+  Rendering pain_activity/index.html.haml within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "painscores"[0m
+  [1m[36mPainscore Load (0.3ms)[0m  [1m[34mSELECT "painscores".* FROM "painscores"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  Rendered pain_activity/index.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 65ms (Views: 59.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/welcome/index" for ::1 at 2017-05-08 17:47:14 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 56ms (Views: 45.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stats/new" for ::1 at 2017-05-08 17:47:15 +0100
+Processing by StatsController#new as HTML
+  [1m[36mPainscore Load (0.6ms)[0m  [1m[34mSELECT foodlogs.food, foodlogs.customdate, painscores.score, activities.name, activities.exertion, painscores.notes FROM foodlogs, painscores, activities WHERE foodlogs.customdate = painscores.customdate AND painscores.customdate = activities.customdate;[0m
+  Rendering stats/new.html.haml
+  Rendered stats/new.html.haml (5.4ms)
+Completed 200 OK in 37ms (Views: 14.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/stats/new" for ::1 at 2017-05-08 17:47:16 +0100
+Processing by StatsController#new as HTML
+  [1m[36mPainscore Load (20.2ms)[0m  [1m[34mSELECT foodlogs.food, foodlogs.customdate, painscores.score, activities.name, activities.exertion, painscores.notes FROM foodlogs, painscores, activities WHERE foodlogs.customdate = painscores.customdate AND painscores.customdate = activities.customdate;[0m
+  Rendering stats/new.html.haml
+  Rendered stats/new.html.haml (4.4ms)
+Completed 200 OK in 35ms (Views: 12.6ms | ActiveRecord: 20.2ms)
+
+
+Started GET "/welcome/index" for ::1 at 2017-05-08 17:47:28 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stats/new" for ::1 at 2017-05-08 17:47:30 +0100
+Processing by StatsController#new as HTML
+  [1m[36mPainscore Load (0.7ms)[0m  [1m[34mSELECT foodlogs.food, foodlogs.customdate, painscores.score, activities.name, activities.exertion, painscores.notes FROM foodlogs, painscores, activities WHERE foodlogs.customdate = painscores.customdate AND painscores.customdate = activities.customdate;[0m
+  Rendering stats/new.html.haml
+  Rendered stats/new.html.haml (7.6ms)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/stats/new" for ::1 at 2017-05-08 17:47:30 +0100
+Processing by StatsController#new as HTML
+  [1m[36mPainscore Load (0.7ms)[0m  [1m[34mSELECT foodlogs.food, foodlogs.customdate, painscores.score, activities.name, activities.exertion, painscores.notes FROM foodlogs, painscores, activities WHERE foodlogs.customdate = painscores.customdate AND painscores.customdate = activities.customdate;[0m
+  Rendering stats/new.html.haml
+  Rendered stats/new.html.haml (4.7ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/welcome/index" for ::1 at 2017-05-08 17:47:49 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 55ms (Views: 50.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/painscores/new" for ::1 at 2017-05-08 17:47:50 +0100
+Processing by PainscoresController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering painscores/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" IS NULL[0m  [["user_id", 1]]
+  Rendered painscores/new.html.haml within layouts/application (6.2ms)
+Completed 200 OK in 84ms (Views: 47.1ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/painscores" for ::1 at 2017-05-08 17:48:00 +0100
+Processing by PainscoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"noGAxWh5EgtWTIRchMdiQyu5QGETo0azp/9nDir33d4FmijmO1Iie+w1WW88s0mDgdeNzLzksROu1SejZOVRsg==", "painscore"=>{"customdate"=>"2017-05-09", "score"=>"10", "notes"=>""}, "commit"=>"Add Pain Score"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPainscore Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "painscores" WHERE "painscores"."customdate" = $1 LIMIT $2[0m  [["customdate", "2017-05-09"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "painscores" ("score", "created_at", "updated_at", "customdate", "user_id", "notes") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["score", 10], ["created_at", 2017-05-08 16:48:00 UTC], ["updated_at", 2017-05-08 16:48:00 UTC], ["customdate", Tue, 09 May 2017], ["user_id", 1], ["notes", ""]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/painscores/new?customdate=2017-05-09
+Completed 302 Found in 11ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/painscores/new?customdate=2017-05-09" for ::1 at 2017-05-08 17:48:00 +0100
+Processing by PainscoresController#new as HTML
+  Parameters: {"customdate"=>"2017-05-09"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering painscores/new.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" = $2[0m  [["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  [1m[36mPainscore Load (0.4ms)[0m  [1m[34mSELECT "painscores".* FROM "painscores" WHERE "painscores"."user_id" = $1 AND "painscores"."customdate" = $2[0m  [["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  Rendered painscores/new.html.haml within layouts/application (8.5ms)
+Completed 200 OK in 50ms (Views: 44.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/foodlogs/new?customdate=2017-05-09" for ::1 at 2017-05-08 17:48:01 +0100
+Processing by FoodlogsController#new as HTML
+  Parameters: {"customdate"=>"2017-05-09"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering foodlogs/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  Rendered foodlogs/new.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 76ms (Views: 38.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/foodlogs" for ::1 at 2017-05-08 17:48:06 +0100
+Processing by FoodlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4i8gicW3+dDuOjgyEzXgDS98Q0jtuDWsNW4MbMktbU95NIiqlpzJoFRD5QGrQcvNhRKO5UL/wgw8REzBhz/hIw==", "foodlog"=>{"customdate"=>"2017-05-09", "food"=>"Eggs"}, "commit"=>"Add Food"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "foodlogs" ("food", "created_at", "updated_at", "customdate", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["food", "Eggs"], ["created_at", 2017-05-08 16:48:06 UTC], ["updated_at", 2017-05-08 16:48:06 UTC], ["customdate", Tue, 09 May 2017], ["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/foodlogs/new?customdate=2017-05-09
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/foodlogs/new?customdate=2017-05-09" for ::1 at 2017-05-08 17:48:06 +0100
+Processing by FoodlogsController#new as HTML
+  Parameters: {"customdate"=>"2017-05-09"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering foodlogs/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  [1m[36mFoodlog Load (0.2ms)[0m  [1m[34mSELECT "foodlogs".* FROM "foodlogs" WHERE "foodlogs"."user_id" = $1 AND "foodlogs"."customdate" = $2[0m  [["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  Rendered foodlogs/new.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/activities/new?customdate=2017-05-09" for ::1 at 2017-05-08 17:48:08 +0100
+Processing by ActivitiesController#new as HTML
+  Parameters: {"customdate"=>"2017-05-09"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering activities/new.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = $1 AND "activities"."customdate" = $2[0m  [["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  Rendered activities/new.html.haml within layouts/application (11.3ms)
+Completed 200 OK in 79ms (Views: 44.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/activities" for ::1 at 2017-05-08 17:48:16 +0100
+Processing by ActivitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qOQGPCcFKiWvVg5ubGtzfhpJr7gPRCLxKRdkk1I4BM8z/64fdC4aVRUv013UH1i+sCdiFaAD1VEgPSQ+HCqIow==", "activity"=>{"customdate"=>"2017-05-09", "name"=>"Walking", "exertion"=>"5"}, "commit"=>"Add Activity"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "activities" ("name", "exertion", "created_at", "updated_at", "user_id", "customdate") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Walking"], ["exertion", 5], ["created_at", 2017-05-08 16:48:16 UTC], ["updated_at", 2017-05-08 16:48:16 UTC], ["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/activities/new?customdate=2017-05-09
+Completed 302 Found in 13ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/activities/new?customdate=2017-05-09" for ::1 at 2017-05-08 17:48:16 +0100
+Processing by ActivitiesController#new as HTML
+  Parameters: {"customdate"=>"2017-05-09"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering activities/new.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities" WHERE "activities"."user_id" = $1 AND "activities"."customdate" = $2[0m  [["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."user_id" = $1 AND "activities"."customdate" = $2[0m  [["user_id", 1], ["customdate", Tue, 09 May 2017]]
+  Rendered activities/new.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 49ms (Views: 43.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/welcome/index" for ::1 at 2017-05-08 17:48:17 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 68ms (Views: 62.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pain_activity" for ::1 at 2017-05-08 17:48:19 +0100
+Processing by PainActivityController#index as HTML
+  Rendering pain_activity/index.html.haml within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "painscores"[0m
+  [1m[36mPainscore Load (1.0ms)[0m  [1m[34mSELECT "painscores".* FROM "painscores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  Rendered pain_activity/index.html.haml within layouts/application (18.9ms)
+Completed 200 OK in 62ms (Views: 56.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/welcome/index" for ::1 at 2017-05-08 17:48:21 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (11.5ms)
+Completed 200 OK in 66ms (Views: 60.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/stats/new" for ::1 at 2017-05-08 17:48:22 +0100
+Processing by StatsController#new as HTML
+  [1m[36mPainscore Load (0.5ms)[0m  [1m[34mSELECT foodlogs.food, foodlogs.customdate, painscores.score, activities.name, activities.exertion, painscores.notes FROM foodlogs, painscores, activities WHERE foodlogs.customdate = painscores.customdate AND painscores.customdate = activities.customdate;[0m
+  Rendering stats/new.html.haml
+  Rendered stats/new.html.haml (8.9ms)
+Completed 200 OK in 27ms (Views: 22.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stats/new" for ::1 at 2017-05-08 17:48:22 +0100
+Processing by StatsController#new as HTML
+  [1m[36mPainscore Load (0.6ms)[0m  [1m[34mSELECT foodlogs.food, foodlogs.customdate, painscores.score, activities.name, activities.exertion, painscores.notes FROM foodlogs, painscores, activities WHERE foodlogs.customdate = painscores.customdate AND painscores.customdate = activities.customdate;[0m
+  Rendering stats/new.html.haml
+  Rendered stats/new.html.haml (4.1ms)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-05-08 18:06:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (17.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  [1m[36mUser Load (17.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.haml within layouts/application (143.3ms)
+Completed 200 OK in 1420ms (Views: 1329.7ms | ActiveRecord: 59.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-05-08 18:06:54 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v7N2KYrCF/L38qy0tfW/MQEiLC9AcPgXwtRDt9yKXQUkqN4K2ekngk2LcYcNgZTxq0zhgu83D7fL/gMakpjRaQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 194ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-05-08 18:06:54 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 83ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-08 18:06:59 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-08 18:07:34 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-08 18:09:44 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (14.1ms)
+Completed 200 OK in 522ms (Views: 489.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-08 18:09:54 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-08 18:10:12 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.haml within layouts/application
+  Rendered welcome/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.0ms)
 
 
