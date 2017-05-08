@@ -39,6 +39,10 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 * Trigger food pie chart and exert to pain line graph created using **[Chart.js](http://www.chartjs.org/)**
 * PDF functionality to view all activity created using **[Wicked PDF](https://github.com/mileszs/wicked_pdf)**
 
+***Architecture***
+![Homepage](public/final_project_architecture.png)
+
+
 ## Objectives of the Final Project
 
 * Are you having fun? **YES**
@@ -106,10 +110,15 @@ I want to return group of foods causing high pain scores.
 - AJAX to recall previous entries
 
 ### Further Screenshots
-![PainLess - The Pain Management Web App - Homepage](public/painless_app1.png)
 
-![PainLess - The Pain Management Web App - Log today's Pain Data](public/painless_app2.png)
+***Homepage***
+![Homepage](public/painless_app1.png)
 
-![PainLess - The Pain Management Web App - View Potential Trigger Foods](public/painless_app3.png)
+***Log today's pain data***
+![Log today's Pain Data](public/painless_app2.png)
 
-![PainLess - The Pain Management Web App - View Exertion to Pain relationships](public/painless_app4.png)
+***View trigger foods***
+![View Potential Trigger Foods](public/painless_app3.png)
+
+***View exertion to pain relationship***
+![View Exertion to Pain relationships](public/painless_app4.png)
