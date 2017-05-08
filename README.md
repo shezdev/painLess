@@ -40,6 +40,7 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 * PDF functionality to view all activity created using **[Wicked PDF](https://github.com/mileszs/wicked_pdf)**
 
 ***Architecture***
+
 ![Homepage](public/final_project_architecture.png)
 
 
@@ -112,13 +113,17 @@ I want to return group of foods causing high pain scores.
 ### Further Screenshots
 
 ***Homepage***
+
 ![Homepage](public/painless_app1.png)
 
 ***Log today's pain data***
+
 ![Log today's Pain Data](public/painless_app2.png)
 
 ***View trigger foods***
+
 ![View Potential Trigger Foods](public/painless_app3.png)
 
 ***View exertion to pain relationship***
+
 ![View Exertion to Pain relationships](public/painless_app4.png)
