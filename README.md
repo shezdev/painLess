@@ -6,6 +6,7 @@
 ### A #Techforgood app that tracks dietary and physical environmental factors and returns data correlated with levels of pain inputted by the user.
 
 **Built by [Shereen Finney](https://github.com/shezdev), [Samir Gossain](https://github.com/sim-ware), [Jack Henderson](https://github.com/artfulgarfunk) and [Konrad Schlatte](https://github.com/schlattk) in 8 days as the final project for Makers Academy.**
+
 ![PainLess - The Pain Management Web App - Login Page](public/painless_app_login.png)
 ## Motivation
 The purpose of this is to allow those who suffer with chronic conditions such as Arthritis and IBS to track their daily pain levels alongside environmental factors such as food and physical activities. This allows them to identify possible triggers for sudden flare ups - e.g. certain foods that may exacerbate their symptoms. In addition, users can access a log of all their inputs which can be exported to PDF, this can be shown to their GP to give a broad overview of their lifestyle and correlated pain.
@@ -30,13 +31,6 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 - Run `rspec` from the `/painLess` directory
 - Currently shows `26 examples, 0 failures`
 
-
-## Objectives of the Final Project
-
-* Are you having fun? **YES**
-* Are you a better developer than you were yesterday? **YES**
-* **Can you use high-quality processes to build an extended project in a team?** **YES**
-
 ## Technology Stack
 * Built using **[Ruby on Rails](http://rubyonrails.org/)**
 * Uses a [Puma Web Server](http://puma.io/)
@@ -46,6 +40,12 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 * Front-end design uses **JavaScript** and **CSS**
 * Trigger food pie chart and exert to pain line graph created using [Chart.js](http://www.chartjs.org/)
 * PDF functionality to view all activity created using [Wicked PDF](https://github.com/mileszs/wicked_pdf)
+
+## Objectives of the Final Project
+
+* Are you having fun? **YES**
+* Are you a better developer than you were yesterday? **YES**
+* **Can you use high-quality processes to build an extended project in a team?** **YES**
 
 ## Project Planning
 Here is a synopsis of our first day group planning session:
