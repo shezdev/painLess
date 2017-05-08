@@ -41,7 +41,7 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 
 ***Architecture***
 
-![Homepage](public/final_project_architecture.png)
+![Architecture](public/final_project_architecture.png)
 
 
 ## Objectives of the Final Project
