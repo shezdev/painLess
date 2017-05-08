@@ -1,8 +1,6 @@
 # PainLess - The Pain Management Web App
 [![Coverage Status](https://coveralls.io/repos/github/shezdev/painLess/badge.svg?branch=master)](https://coveralls.io/github/shezdev/painLess?branch=master)
 
-5fd4f446b0a3873148edbc3fe7f8e8054ebce2f7c336acaf4c8774359db0bf21
-
 ### A #Techforgood app that tracks dietary and physical environmental factors and returns data correlated with levels of pain inputted by the user.
 
 **Built by [Shereen Finney](https://github.com/shezdev), [Samir Gossain](https://github.com/sim-ware), [Jack Henderson](https://github.com/artfulgarfunk) and [Konrad Schlatte](https://github.com/schlattk) in 8 days as the final project for Makers Academy.**
@@ -33,13 +31,13 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 
 ## Technology Stack
 * Built using **[Ruby on Rails](http://rubyonrails.org/)**
-* Uses a [Puma Web Server](http://puma.io/)
-* Runs off a [Postgres Database](https://www.postgresql.org/)
-* Tested using [RSpec](http://rspec.info/), [Capybara](http://teamcapybara.github.io/capybara/) and [Cucumber](https://cucumber.io/)
-* Test coverage statistics calculated using [Coveralls](https://coveralls.io/) and [Travis CI](https://travis-ci.org/shezdev/painLess)
+* Uses a **[Puma Web Server](http://puma.io/)**
+* Runs off a **[Postgres Database](https://www.postgresql.org/)**
+* Tested using **[RSpec](http://rspec.info/)**, **[Capybara](http://teamcapybara.github.io/capybara/)** and **[Cucumber](https://cucumber.io/)**
+* Test coverage statistics calculated using **[Coveralls](https://coveralls.io/)** and **[Travis CI](https://travis-ci.org/shezdev/painLess)**
 * Front-end design uses **JavaScript** and **CSS**
-* Trigger food pie chart and exert to pain line graph created using [Chart.js](http://www.chartjs.org/)
-* PDF functionality to view all activity created using [Wicked PDF](https://github.com/mileszs/wicked_pdf)
+* Trigger food pie chart and exert to pain line graph created using **[Chart.js](http://www.chartjs.org/)**
+* PDF functionality to view all activity created using **[Wicked PDF](https://github.com/mileszs/wicked_pdf)**
 
 ## Objectives of the Final Project
 
@@ -50,10 +48,10 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 ## Project Planning
 Here is a synopsis of our first day group planning session:
 
-* Check in with how everyone is, what they want to get out of the project at the end (good demonstration of best practices and great teamwork rather than flashy functionality), to make sure everyone is happy on the project going forward, that we all have an equal voice and listen to each other and we're open to feedback.
+* Check in with how everyone is, what they want to get out of the project at the end (demonstration of best practices and great teamwork), to make sure everyone is happy on the project going forward, that we all have an equal voice, listen to each other and are open to feedback.
 * Brainstorming success factors for our project and how we want to work e.g. Prioritising TDD, pairing, switching pairs frequently, importance of planning and thinking of architecture, stand-ups and retros, lessons learnt from peers and previous projects.
 * Trying to get everyone on the same page of understanding of the project idea, by first describing it almost in terms of what the user wants and needs, then drawing out how it could work (diagramming) and what the user might see (wireframes).
-* Trying to describe the project in one sentence.
+* Working on a one line description for this project.
 * Deciding on the MVP functionality by answering from the user's perspective and thinking what is the smallest thing we could do.
 * Writing user stories for the MVP.
 * Brainstorming how we could extend the functionality, then coming up with user stories for v2 and a list for v3.
@@ -70,7 +68,7 @@ Here is a synopsis of our first day group planning session:
 ## User Stories
 As a group, we developed the following user stories that defined our goals for the project as well as what we considered to be the minimum viable product (MVP):
 
-*** MVP ***
+***MVP***
 ```
 As a user
 So that I can monitor my health
@@ -80,7 +78,7 @@ As a user
 So I can see my data
 I want to be able to see yesterday’s input
 ```
-*** V2 User stories ***
+***V2 User stories***
 
 ```
 As a user
@@ -95,14 +93,14 @@ As a user
 So that I can see clearer patterns in my pain
 I want to return group of foods causing high pain scores.
 ```
-*** V3 Functionality ***
+***V3 Functionality***
 - Update food and painscores to show on same page as form
 - Today's food and painscores are only displayed
 - Functionality for multiple users (login etc)
 - Update and delete functionality
 - Can only add 1 Pain Score Per Day
 
-*** V4 Functionality ***
+***V4 Functionality***
 - Data Visualisation of all Data
 - Stats for GP/Dietician
 - AJAX to recall previous entries
