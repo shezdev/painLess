@@ -43,7 +43,7 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 
 ![Architecture](public/final_project_architecture.png)
 
-
+![Homepage](public/painless_app1.png)
 ## Objectives of the Final Project
 
 * Are you having fun? **YES**
