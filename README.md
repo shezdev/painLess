@@ -1,10 +1,10 @@
 # PainLess - The Pain Management Web App
-[![Coverage Status](https://coveralls.io/repos/github/shezdev/final_project/badge.svg?branch=master)](https://coveralls.io/github/shezdev/final_project?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/shezdev/painLess/badge.svg?branch=master)](https://coveralls.io/github/shezdev/painLess?branch=master)
 ### A #Techforgood app that tracks dietary and physical environmental factors and returns data correlated with levels of pain inputted by the user.
 
 ** Built by [Shereen Finney](https://github.com/shezdev), [Samir Gossain](https://github.com/sim-ware), [Jack Henderson](https://github.com/artfulgarfunk) and [Konrad Schlatte](https://github.com/schlattk) in 8 days as the final project for Makers Academy.**
-![PainLess - The Pain Management Web App - Login Page](painless_app_login.png)
-# Motivation
+![PainLess - The Pain Management Web App - Login Page](public/painless_app_login.png)
+## Motivation
 The purpose of this is to allow those who suffer with chronic conditions such as Arthritis and IBS to track their daily pain levels alongside environmental factors such as food and physical activities. This allows them to identify possible triggers for sudden flare ups - e.g. certain foods that may exacerbate their symptoms. In addition, users can access a log of all their inputs which can be exported to PDF, this can be shown to their GP to give a broad overview of their lifestyle and correlated pain.
 
 ## Getting started
@@ -38,8 +38,8 @@ The purpose of this is to allow those who suffer with chronic conditions such as
 * Built using **[Ruby on Rails](http://rubyonrails.org/)**
 * Uses a [Puma Web Server](http://puma.io/)
 * Runs off a [Postgres Database](https://www.postgresql.org/)
-* Tested using [RSpec](http://rspec.info/), [Capybara](http://teamcapybara.github.io/capybara/) and Cucumber (https://cucumber.io/).
-* Test coverage statistics calculated using [Coveralls](https://coveralls.io/)
+* Tested using [RSpec](http://rspec.info/), [Capybara](http://teamcapybara.github.io/capybara/) and [Cucumber](https://cucumber.io/)
+* Test coverage statistics calculated using [Coveralls](https://coveralls.io/) and [Travis CI](https://travis-ci.org/shezdev/painLess)
 * Front-end design uses **JavaScript** and **CSS**
 * Trigger food pie chart and exert to pain line graph created using [Chart.js](http://www.chartjs.org/)
 * PDF functionality to view all activity created using [Wicked PDF](https://github.com/mileszs/wicked_pdf)
@@ -105,10 +105,10 @@ I want to return group of foods causing high pain scores.
 - AJAX to recall previous entries
 
 ### Further Screenshots
-![PainLess - The Pain Management Web App - Homepage](painless_app1.png)
+![PainLess - The Pain Management Web App - Homepage](public/painless_app1.png)
 
-![PainLess - The Pain Management Web App - Log today's Pain Data](painless_app2.png)
+![PainLess - The Pain Management Web App - Log today's Pain Data](public/painless_app2.png)
 
-![PainLess - The Pain Management Web App - View Potential Trigger Foods](painless_app3.png)
+![PainLess - The Pain Management Web App - View Potential Trigger Foods](public/painless_app3.png)
 
-![PainLess - The Pain Management Web App - View Exertion to Pain relationships](painless_app4.png)
+![PainLess - The Pain Management Web App - View Exertion to Pain relationships](public/painless_app4.png)
