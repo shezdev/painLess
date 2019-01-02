@@ -3,7 +3,7 @@
 
 ### A #Techforgood app that tracks dietary and physical environmental factors and returns data correlated with levels of pain inputted by the user.
 
-**Built by [Shereen Finney](https://github.com/shezdev), [Samir Gossain](https://github.com/sim-ware), [Jack Henderson](https://github.com/artfulgarfunk) and [Konrad Schlatte](https://github.com/schlattk) in 8 days as the final project for Makers Academy.**
+**Built by [Shereen Peeroo Finney](https://github.com/shezdev), [Samir Gossain](https://github.com/sim-ware), [Jack Henderson](https://github.com/artfulgarfunk) and [Konrad Schlatte](https://github.com/schlattk) in 8 days as the final project for Makers Academy.**
 
 ![PainLess - The Pain Management Web App - Login Page](public/painless_app_login.png)
 ## Motivation
